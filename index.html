@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,33 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <form action="" class="dob">
+        <div class="day-containter" id="day">
+          <label for="day">Day</label>
+          <input type="text" name="day" id="day-input" />
+        </div>
+        <div class="month-containter" id="month">
+          <label for="month">Month</label>
+          <input type="text" name="month" id="month-input" />
+        </div>
+        <div class="year-containter" id="year">
+          <label for="year">Year</label>
+          <input type="text" name="year" id="year-input" />
+        </div>
+      </form>
+      <div class="divider">
+        <hr>
+        <button>
+          <img src="./assets/images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+      <div class="age">
+        <h1 id="ageYear" class="age"></h1>
+        <h1 id="ageMonth" class="age"></h1>
+        <h1 id="ageDay" class="age"></h1>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
