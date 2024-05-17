@@ -4,28 +4,60 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
     <title>Vite App</title>
   </head>
-  <body>
-    <div id="app">
-      <form action="" class="dob">
-        <div class="day-containter" id="day">
-          <label for="day">Day</label>
-          <input type="text" name="day" id="day-input" />
+  <body class="bg-[#dbdbdb]">
+    <div id="app" class="p-14 bg-white rounded-3xl rounded-br-[200px] flex flex-col w-fit">
+      <form action="" class="dob flex gap-8">
+        <div class="day-containter flex flex-col gap-2" id="day">
+          <label
+            for="day"
+            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            >DAY</label
+          >
+          <input
+            placeholder="DD"
+            type="text"
+            name="day"
+            id="day-input"
+            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+          />
         </div>
-        <div class="month-containter" id="month">
-          <label for="month">Month</label>
-          <input type="text" name="month" id="month-input" />
+        <div class="month-containter flex flex-col gap-2" id="month">
+          <label
+            for="month"
+            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            >MONTH</label
+          >
+          <input
+            type="text"
+            placeholder="MM"
+            name="month"
+            id="month-input"
+            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+          />
         </div>
-        <div class="year-containter" id="year">
-          <label for="year">Year</label>
-          <input type="text" name="year" id="year-input" />
+        <div class="year-containter flex flex-col gap-2" id="year">
+          <label
+            for="year"
+            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            >YEAR</label
+          >
+          <input
+            type="text"
+            placeholder="YYYY"
+            name="year"
+            id="year-input"
+            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+          />
         </div>
       </form>
-      <div class="divider">
-        <hr>
-        <button>
-          <img src="./assets/images/icon-arrow.svg" alt="">
+      <div class="divider flex max-w-[728px]">
+        <hr class="my-12 grow" />
+        <button type="submit" class="dob-button bg-violet-500 rounded-full p-6">
+          <img src="./assets/images/icon-arrow.svg" alt="" />
         </button>
       </div>
       <div class="age">
