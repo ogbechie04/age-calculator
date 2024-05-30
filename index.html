@@ -8,13 +8,24 @@
 
     <title>Vite App</title>
   </head>
-  <body class="bg-[#dbdbdb]">
-    <div id="app" class="p-14 bg-white rounded-3xl rounded-br-[200px] flex flex-col w-fit">
-      <form action="" class="dob flex gap-8">
-        <div class="day-containter flex flex-col gap-2" id="day">
+  <body
+    class="bg-[#dbdbdb] m-0 p-0 flex justify-center items-center w-screen h-screen"
+  >
+    <!-- DIV THAT HOUSES ALL COMPONENTS -->
+    <div
+      id="app"
+      class="bg-white px-6 py-12 rounded-3xl gap-8 flex flex-col rounded-br-[100px] lg:gap-0 lg:p-14 lg:rounded-br-[200px] lg:w-11/12 lg:max-w-[840px] max-w-[343px]"
+    >
+      <!-- FORM FOR INPUT OF DATE OF BIRTH -->
+      <form action="" class="dob flex flex-row gap-4 lg:gap-8">
+        <!-- DAY DIV -->
+        <div
+          class="day-containter flex flex-col gap-1 w-[29.8%] lg:gap-2 lg:w-[22%]"
+          id="day"
+        >
           <label
             for="day"
-            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            class="text-xs font-bold text-[#716F6F] tracking-[.25em] lg:text-sm"
             >DAY</label
           >
           <input
@@ -22,13 +33,17 @@
             type="text"
             name="day"
             id="day-input"
-            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+            class="text-xl px-4 py-3 border-[1px] border-solid rounded-lg font-bold lg:ps-6 lg:pe-6 lg:py-3 lg:text-3xl"
           />
         </div>
-        <div class="month-containter flex flex-col gap-2" id="month">
+        <!-- MONTH DIV -->
+        <div
+          class="month-containter flex flex-col gap-1 w-[29.8%] lg:gap-2 lg:w-[22%]"
+          id="month"
+        >
           <label
             for="month"
-            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            class="text-xs font-bold text-[#716F6F] tracking-[.25em] lg:text-sm"
             >MONTH</label
           >
           <input
@@ -36,13 +51,17 @@
             placeholder="MM"
             name="month"
             id="month-input"
-            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+            class="text-xl px-4 py-3 border-[1px] border-solid rounded-lg font-bold lg:ps-6 lg:pe-6 lg:py-3 lg:text-3xl"
           />
         </div>
-        <div class="year-containter flex flex-col gap-2" id="year">
+        <!-- YEAR DIV -->
+        <div
+          class="year-containter flex flex-col gap-1 w-[29.8%] lg:gap-2 lg:w-[22%]"
+          id="year"
+        >
           <label
             for="year"
-            class="text-sm font-bold text-[#716F6F] tracking-[.25em]"
+            class="text-xs font-bold text-[#716F6F] tracking-[.25em] lg:text-sm"
             >YEAR</label
           >
           <input
@@ -50,20 +69,40 @@
             placeholder="YYYY"
             name="year"
             id="year-input"
-            class="ps-6 pe-6 pt-3 pb-3 border-[1px] border-solid rounded-lg text-3xl font-bold max-w-40"
+            class="text-xl px-4 py-3 border-[1px] border-solid rounded-lg font-bold lg:ps-6 lg:pe-6 lg:py-3 lg:text-3xl"
           />
         </div>
       </form>
-      <div class="divider flex max-w-[728px]">
-        <hr class="my-12 grow" />
-        <button type="submit" class="dob-button bg-violet-500 rounded-full p-6">
-          <img src="./assets/images/icon-arrow.svg" alt="" />
+      <!-- DIVIDER WITH BUTTON -->
+      <div class="divider flex items-center">
+        <hr class="lg:my-12 grow border-t h-1" />
+        <button
+          type="submit"
+          class="dob-button bg-violet-500 rounded-full p-5 lg:p-6"
+        >
+          <img src="./assets/images/icon-arrow.svg" class="w-6 h-6" alt="" />
         </button>
+        <hr class="lg:my-12 grow border-t h1 lg:hidden" />
       </div>
-      <div class="age">
-        <h1 id="ageYear" class="age"></h1>
-        <h1 id="ageMonth" class="age"></h1>
-        <h1 id="ageDay" class="age"></h1>
+      <!-- DIV FOR AGE RETURNED -->
+      <div
+        class="age flex flex-col gap-0 text-[56px] tracking-[-1.12px] font-extrabold italic lg:text-[104px] lg:tracking-[-2.08px]"
+      >
+        <!-- YEAR DIV -->
+        <div id="ageYear" class="age flex gap-2 leading-[110%]">
+          <p id="yearNumber" class="text-purple-500">38</p>
+          <h2 class="text-slate-950">years</h2>
+        </div>
+        <!-- MONTH DIV -->
+        <div id="ageMonth" class="age flex gap-2 leading-[110%]">
+          <h2 id="monthNumber" class="text-purple-500">3</h2>
+          <h2>months</h2>
+        </div>
+        <!-- DAY DIV -->
+        <div id="ageDay" class="age flex gap-2 leading-[110%]">
+          <h2 id="ageNumber" class="text-purple-500">38</h2>
+          <h2>days</h2>
+        </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>
