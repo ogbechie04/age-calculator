@@ -1,9 +1,5 @@
 import DaysInMonth from "./numOfDays";
 
-/**
- * TODO: Clean bg on input focus
- */
-
 const dayLabel = document.querySelector("#day-label");
 const monthLabel = document.querySelector("#month-label");
 const yearLabel = document.querySelector("#year-label");
@@ -101,6 +97,29 @@ const validateForm = (dayValue, monthValue, yearValue) => {
   return isValid;
 };
 
+const animateValue = (element, start, end, duration) => {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    element.textContent = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const displayAnimatedAge = (years, months, days) => {
+  const yearElement = document.querySelector("#yearNumber");
+  const monthElement = document.querySelector("#monthNumber");
+  const dayElement = document.querySelector("#dayNumber");
+
+  animateValue(yearElement, 0, years, 2000);
+  animateValue(monthElement, 0, months, 2000);
+  animateValue(dayElement, 0, days, 2000);
+}
+
 // ------- FORM SUBMISSION -------
 const handleAgeCalculation = (event) => {
   event.preventDefault();
@@ -116,9 +135,7 @@ const handleAgeCalculation = (event) => {
 
   const { years, months, days } = calculateAge(dayValue, monthValue, yearValue);
 
-  document.querySelector("#yearNumber").textContent = years;
-  document.querySelector("#monthNumber").textContent = months;
-  document.querySelector("#dayNumber").textContent = days;
+  displayAnimatedAge(years, months, days);
 };
 
 document
